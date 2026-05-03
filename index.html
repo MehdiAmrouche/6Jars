@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>6 Jars Budget – Harv Eker</title>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="6 Jars"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#0A0E1A"/>
+<link rel="manifest" href="data:application/manifest+json,{
+  %22name%22:%226%20Jars%20Budget%22,
+  %22short_name%22:%226%20Jars%22,
+  %22description%22:%22Harv%20Eker%206%20Jars%20Budget%20Tracker%22,
+  %22start_url%22:%22.%2F%22,
+  %22display%22:%22standalone%22,
+  %22orientation%22:%22portrait%22,
+  %22background_color%22:%220A0E1A%22,
+  %22theme_color%22:%220A0E1A%22,
+  %22icons%22:[{%22src%22:%22https://cdn-icons-png.flaticon.com/512/2329/2329087.png%22,%22sizes%22:%22512x512%22,%22type%22:%22image%2Fpng%22,%22purpose%22:%22any%20maskable%22}]
+}"/>
+<link rel="apple-touch-icon" href="data:image/png;base64,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"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0A0E1A;--s1:#111827;--s2:#1A2235;--border:rgba(255,255,255,0.07);--text:#F0F4FF;--muted:#6B7A99;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* HEADER */
+.hdr{background:linear-gradient(180deg,#0D1526,var(--bg));border-bottom:1px solid var(--border);padding:18px 16px 14px;position:sticky;top:0;z-index:200}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.brand-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;background:linear-gradient(90deg,#F0F4FF,#93C5FD);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.brand-sub{font-size:11px;letter-spacing:2px;color:var(--muted)}
+.month-nav{display:flex;align-items:center;gap:8px}
+.mbtn{width:28px;height:28px;border-radius:8px;background:var(--s2);border:1px solid var(--border);color:var(--muted);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+.mlbl{display:flex;flex-direction:column;align-items:center}
+.mlbl-m{font-size:13px;font-weight:700;font-family:'DM Mono',monospace}
+.mlbl-y{font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px}
+
+/* SALARY */
+.salary-row{display:flex;align-items:center;gap:10px;background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:11px 14px;overflow:hidden}
+.salary-lbl{font-size:14px;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.salary-input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:22px;font-weight:700;font-family:'DM Mono',monospace;text-align:right;min-width:0;width:100%}
+.salary-unit{font-size:14px;color:var(--muted);flex-shrink:0}
+
+/* TABS */
+.tabs{display:flex;gap:4px;background:var(--s2);border-radius:10px;padding:4px;margin:14px 16px 0}
+.tab{flex:1;padding:9px 4px;border-radius:8px;border:none;cursor:pointer;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;transition:all .2s;background:transparent;color:var(--muted)}
+.tab.active{background:#1D4ED8;color:#fff}
+
+.content{padding:16px 16px 120px}
+.sec{display:none}.sec.active{display:block}
+
+/* JAR CARD */
+.jar{border-radius:18px;padding:16px;margin-bottom:12px;position:relative;overflow:hidden}
+.jar::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.03)}
+.jar-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.jar-info{display:flex;align-items:center;gap:10px}
+.jar-ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.jar-label{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}
+.jar-tag{font-size:10px;margin-top:3px;padding:2px 8px;border-radius:10px;display:inline-block;font-weight:600;letter-spacing:.5px}
+.jar-balance{text-align:right;flex-shrink:0}
+.jar-amount{font-family:'DM Mono',monospace;font-size:22px;font-weight:500}
+.jar-monthly{font-size:11px;margin-top:3px;opacity:.65}
+.prog-track{height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.prog-fill{height:100%;border-radius:3px;transition:width .5s ease}
+.prog-meta{display:flex;justify-content:space-between;margin-bottom:12px}
+.prog-meta span{font-size:13px;font-weight:600;color:#7A8AA0;font-family:'DM Mono',monospace}
+.jar-btns{display:flex;gap:8px}
+.jar-btn{flex:1;padding:10px;border-radius:10px;border:none;cursor:pointer;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:5px;transition:opacity .15s}
+.jar-btn:active{opacity:.8}
+.btn-dep{background:rgba(16,185,129,0.15);color:#10B981;border:1px solid rgba(16,185,129,0.3)}
+.btn-exp{background:rgba(239,68,68,0.10);color:#EF4444;border:1px solid rgba(239,68,68,0.2)}
+.jar-tip{font-size:11px;margin-top:10px;opacity:.5;font-style:italic;text-align:center}
+
+/* TRACK */
+.hist-group{background:var(--s1);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:10px}
+.hist-hdr{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--border)}
+.hist-hdr-name{font-size:14px;font-weight:600}
+.hist-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.hist-item:last-child{border-bottom:none}
+.hist-name{font-size:13px;color:#CBD5E1}
+.hist-date{font-size:10px;color:var(--muted);margin-top:2px}
+.hist-right{display:flex;align-items:center;gap:10px}
+.hist-amt{font-size:14px;font-family:'DM Mono',monospace;font-weight:600}
+.del-btn{width:24px;height:24px;border-radius:6px;background:rgba(239,68,68,0.12);border:none;color:#EF4444;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center}
+
+/* SAVINGS */
+.proj-card{border-radius:14px;padding:14px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.07)}
+.proj-title{font-size:14px;font-weight:600;margin-bottom:4px}
+.proj-sub{font-size:11px;color:var(--muted);margin-bottom:8px}
+.proj-amount{font-family:'DM Mono',monospace;font-size:26px;font-weight:700}
+.milestones{background:var(--s1);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:14px}
+.mil-hdr{padding:12px 16px;border-bottom:1px solid var(--border);font-size:10px;letter-spacing:1.5px;color:var(--muted);font-weight:600}
+.mil-row{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid var(--border)}
+.mil-row:last-child{border-bottom:none}
+.mil-period{font-size:13px;color:var(--muted)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#111827;border-radius:20px 20px 0 0;padding:24px 20px 44px;width:100%;max-width:480px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-title{font-size:16px;font-weight:700;margin-bottom:16px}
+.modal-field{width:100%;background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-size:16px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:10px;transition:border-color .2s}
+.modal-field:focus{border-color:#3B82F6}
+.modal-btn{width:100%;padding:14px;border:none;border-radius:11px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:4px;color:#fff}
+.modal-cancel{background:rgba(255,255,255,0.06);color:var(--muted)!important;margin-top:8px}
+
+/* EMPTY */
+.empty{text-align:center;padding:40px 20px;color:var(--muted)}
+
+/* SAVE BADGE */
+#save-badge{position:fixed;bottom:20px;right:16px;background:rgba(255,209,102,0.15);border:1px solid rgba(255,209,102,0.35);color:#FFD166;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;font-family:'DM Sans',sans-serif}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--s2);border-radius:2px}
+</style>
+</head>
+<body>
+<div id="save-badge">✅ Auto-saved</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-top">
+    <div>
+      <div class="brand-title">💼 6 Jars Budget</div>
+      <div class="brand-sub">HARV EKER METHOD</div>
+    </div>
+    <div class="month-nav">
+      <button class="mbtn" onclick="chMo(-1)">‹</button>
+      <div class="mlbl">
+        <div class="mlbl-m" id="mlbl-m">May</div>
+        <div class="mlbl-y" id="mlbl-y">2026</div>
+      </div>
+      <button class="mbtn" onclick="chMo(1)">›</button>
+    </div>
+  </div>
+  <div class="salary-row">
+    <span class="salary-lbl">Monthly Salary</span>
+    <input class="salary-input" type="number" id="salaryInput" value="4000" oninput="updateSalary(this.value)"/>
+    <span class="salary-unit">QAR</span>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="sw('overview',this)">📊 Overview</button>
+    <button class="tab" onclick="sw('track',this)">📝 Track</button>
+    <button class="tab" onclick="sw('savings',this)">📈 Savings</button>
+  </div>
+</div>
+
+<div class="content">
+  <!-- OVERVIEW -->
+  <div class="sec active" id="sec-overview">
+    <div id="jar-cards"></div>
+  </div>
+
+  <!-- TRACK -->
+  <div class="sec" id="sec-track">
+    <div id="track-list"></div>
+  </div>
+
+  <!-- SAVINGS -->
+  <div class="sec" id="sec-savings">
+    <div style="background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px">
+      <div style="font-size:11px;letter-spacing:1.5px;color:var(--muted);margin-bottom:10px;font-weight:600">PROJECTION MONTHS</div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:13px;color:var(--muted)">Months:</span>
+        <input type="range" min="1" max="60" value="12" id="savSlider" style="flex:1;accent-color:#8B5CF6" oninput="document.getElementById('savVal').textContent=this.value;renderSavings()"/>
+        <span style="font-size:18px;font-weight:700;font-family:'DM Mono',monospace;min-width:30px" id="savVal">12</span>
+      </div>
+    </div>
+    <div id="sav-cards"></div>
+    <div class="milestones">
+      <div class="mil-hdr">SAVINGS MILESTONES</div>
+      <div id="milestones"></div>
+    </div>
+    <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:14px;padding:16px;margin-top:14px;text-align:center">
+      <div style="font-size:10px;letter-spacing:2px;color:#10B981;margin-bottom:6px">💡 HARV EKER</div>
+      <div style="font-size:13px;color:#94A3B8;line-height:1.7;font-style:italic">"It's not how much you make, it's how much you keep — and how hard it works for you."</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-title" id="modal-title">💰 Deposit</div>
+    <input class="modal-field" id="modal-name" placeholder="Description"/>
+    <input class="modal-field" type="number" id="modal-amount" placeholder="Amount (QAR)" onkeydown="if(event.key==='Enter')confirmModal()"/>
+    <button class="modal-btn" id="modal-confirm-btn" onclick="confirmModal()">Confirm</button>
+    <button class="modal-btn modal-cancel" onclick="hideModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+const JARS=[
+  {id:'necessities',label:'Necessities',emoji:'🏠',pct:50,color:'#F59E0B',bg:'rgba(245,158,11,0.12)',border:'rgba(245,158,11,0.25)',monthly:true,tip:'Resets every month — fresh start for bills & food'},
+  {id:'freedom',label:'Financial Freedom',emoji:'💰',pct:10,color:'#10B981',bg:'rgba(16,185,129,0.12)',border:'rgba(16,185,129,0.25)',monthly:false,tip:'Never spend — grows forever like an investment'},
+  {id:'education',label:'Education',emoji:'📚',pct:10,color:'#3B82F6',bg:'rgba(59,130,246,0.12)',border:'rgba(59,130,246,0.25)',monthly:false,tip:'Save until you find the right course or book'},
+  {id:'savings',label:'Long-term Savings',emoji:'🎯',pct:10,color:'#8B5CF6',bg:'rgba(139,92,246,0.12)',border:'rgba(139,92,246,0.25)',monthly:false,tip:'Save for one big goal — car, trip, apartment'},
+  {id:'entertainment',label:'Entertainment',emoji:'🎉',pct:10,color:'#EC4899',bg:'rgba(236,72,153,0.12)',border:'rgba(236,72,153,0.25)',monthly:false,tip:'Enjoy guilt-free — unspent carries over!'},
+  {id:'giving',label:'Giving',emoji:'🎁',pct:10,color:'#EF4444',bg:'rgba(239,68,68,0.12)',border:'rgba(239,68,68,0.25)',monthly:false,tip:'Sadaqah, family & charity — grows until given'},
+];
+
+const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+let salary=4000, cm=new Date().getMonth(), cy=new Date().getFullYear();
+let transactions={};
+let modalJar=null, modalType=null;
+
+// ── AUTO-SAVE ──
+function save(){
+  try{
+    localStorage.setItem('j6_salary',salary);
+    localStorage.setItem('j6_month',cm);
+    localStorage.setItem('j6_year',cy);
+    localStorage.setItem('j6_txns',JSON.stringify(transactions));
+    showSaved();
+  }catch(e){}
+}
+function load(){
+  try{
+    const s=localStorage.getItem('j6_salary');
+    const m=localStorage.getItem('j6_month');
+    const y=localStorage.getItem('j6_year');
+    const t=localStorage.getItem('j6_txns');
+    if(s){salary=parseFloat(s);document.getElementById('salaryInput').value=s;}
+    if(m)cm=parseInt(m);
+    if(y)cy=parseInt(y);
+    if(t)transactions=JSON.parse(t);
+  }catch(e){}
+}
+function showSaved(){
+  const b=document.getElementById('save-badge');
+  b.style.opacity='1';
+  clearTimeout(b._t);
+  b._t=setTimeout(()=>b.style.opacity='0',1500);
+}
+
+// ── HELPERS ──
+function fmt(n){return Math.round(n).toLocaleString('en-US')+' QAR';}
+function getAlloc(jar){return salary*jar.pct/100;}
+function mkDate(m,y){return MONTHS[m]+' '+y;}
+function getTxns(jar){
+  const all=transactions[jar.id]||[];
+  if(jar.monthly)return all.filter(t=>t.month===cm&&t.year===cy);
+  return all;
+}
+function getBalance(jar){return getTxns(jar).reduce((s,t)=>t.type==='deposit'?s+t.amount:s-t.amount,0);}
+function getTotalDep(jar){return getTxns(jar).filter(t=>t.type==='deposit').reduce((s,t)=>s+t.amount,0);}
+function getTotalSpent(jar){return getTxns(jar).filter(t=>t.type==='expense').reduce((s,t)=>s+t.amount,0);}
+
+// ── NAVIGATION ──
+function chMo(d){
+  cm+=d;if(cm>11){cm=0;cy++;}if(cm<0){cm=11;cy--;}
+  document.getElementById('mlbl-m').textContent=MONTHS[cm];
+  document.getElementById('mlbl-y').textContent=cy;
+  save();renderAll();
+}
+function sw(name,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sec-'+name).classList.add('active');
+}
+function updateSalary(v){
+  const val=parseFloat(v);
+  if(!isNaN(val)&&val>0){salary=val;save();renderAll();}
+}
+
+// ── MODAL ──
+function showModal(jarId,type){
+  modalJar=jarId;modalType=type;
+  const jar=JARS.find(j=>j.id===jarId);
+  const isDep=type==='deposit';
+  document.getElementById('modal-title').textContent=(isDep?'➕ Deposit into ':'➖ Expense from ')+jar.emoji+' '+jar.label;
+  document.getElementById('modal-name').value='';
+  document.getElementById('modal-amount').value='';
+  document.getElementById('modal-name').placeholder=isDep?'e.g. May salary deposit':'e.g. Groceries, Netflix...';
+  const btn=document.getElementById('modal-confirm-btn');
+  btn.style.background=isDep?'linear-gradient(135deg,#065F46,#10B981)':'linear-gradient(135deg,#7F1D1D,#EF4444)';
+  btn.textContent=isDep?'➕ Add Deposit':'➖ Add Expense';
+  document.getElementById('modal-overlay').classList.add('open');
+  setTimeout(()=>document.getElementById('modal-name').focus(),350);
+}
+function hideModal(){document.getElementById('modal-overlay').classList.remove('open');modalJar=null;modalType=null;}
+function closeModal(e){if(e.target===document.getElementById('modal-overlay'))hideModal();}
+function confirmModal(){
+  const name=document.getElementById('modal-name').value.trim();
+  const amount=parseFloat(document.getElementById('modal-amount').value);
+  if(!name||isNaN(amount)||amount<=0)return;
+  if(!transactions[modalJar])transactions[modalJar]=[];
+  transactions[modalJar].push({id:Date.now(),type:modalType,name,amount,month:cm,year:cy,date:mkDate(cm,cy)});
+  save();renderAll();hideModal();
+}
+function deleteTxn(jarId,txnId){
+  if(transactions[jarId]){transactions[jarId]=transactions[jarId].filter(t=>t.id!=txnId);save();renderAll();}
+}
+
+// ── RENDER OVERVIEW ──
+function renderOverview(){
+  document.getElementById('jar-cards').innerHTML=JARS.map(jar=>{
+    const bal=getBalance(jar);
+    const dep=getTotalDep(jar);
+    const spent=getTotalSpent(jar);
+    const alloc=getAlloc(jar);
+    const pct=dep>0?Math.min((spent/dep)*100,100):0;
+    return `
+    <div class="jar" style="background:linear-gradient(135deg,${jar.bg},rgba(0,0,0,0.1));border:1px solid ${jar.border}">
+      <div class="jar-top">
+        <div class="jar-info">
+          <div class="jar-ico" style="background:${jar.bg}">${jar.emoji}</div>
+          <div>
+            <div class="jar-label">${jar.label}</div>
+            <span class="jar-tag" style="background:${jar.monthly?'rgba(255,255,255,0.06)':'rgba(0,229,160,0.1)'};color:${jar.monthly?'#6B7A99':'#00E5A0'}">
+              ${jar.monthly?'🔄 Monthly reset':'📈 Cumulative'}
+            </span>
+          </div>
+        </div>
+        <div class="jar-balance">
+          <div class="jar-amount" style="color:${bal>=0?jar.color:'#EF4444'}">${fmt(bal)}</div>
+          <div class="jar-monthly" style="color:${jar.color}">+${fmt(alloc)}/month</div>
+        </div>
+      </div>
+      <div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${pct>=100?'#EF4444':jar.color}"></div></div>
+      <div class="prog-meta">
+        <span>Deposited: ${fmt(dep)} · Spent: ${fmt(spent)}</span>
+        <span>${Math.round(pct)}%</span>
+      </div>
+      <div class="jar-btns">
+        <button class="jar-btn btn-dep" onclick="showModal('${jar.id}','deposit')">➕ Deposit</button>
+        <button class="jar-btn btn-exp" onclick="showModal('${jar.id}','expense')">➖ Expense</button>
+      </div>
+      <div class="jar-tip">${jar.tip}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── RENDER TRACK ──
+function renderTrack(){
+  let html='',hasAny=false;
+  JARS.forEach(jar=>{
+    const txns=[...getTxns(jar)].reverse();
+    if(!txns.length)return;
+    hasAny=true;
+    const bal=getBalance(jar);
+    html+=`<div class="hist-group">
+      <div class="hist-hdr">
+        <span class="hist-hdr-name">${jar.emoji} ${jar.label}</span>
+        <span style="font-family:'DM Mono',monospace;font-size:14px;color:${bal>=0?jar.color:'#EF4444'};font-weight:700">${fmt(bal)}</span>
+      </div>
+      ${txns.map(t=>`<div class="hist-item">
+        <div><div class="hist-name">${t.name}</div><div class="hist-date">${t.date} · ${t.type}</div></div>
+        <div class="hist-right">
+          <div class="hist-amt" style="color:${t.type==='deposit'?'#10B981':'#EF4444'}">${t.type==='deposit'?'+':'-'}${fmt(t.amount)}</div>
+          <button class="del-btn" onclick="deleteTxn('${jar.id}',${t.id})">✕</button>
+        </div>
+      </div>`).join('')}
+    </div>`;
+  });
+  if(!hasAny)html=`<div class="empty"><div style="font-size:32px;margin-bottom:10px">📝</div><p style="font-size:15px">No transactions yet.</p><p style="font-size:13px;margin-top:6px">Go to Overview → tap ➕ Deposit or ➖ Expense!</p></div>`;
+  document.getElementById('track-list').innerHTML=html;
+}
+
+// ── RENDER SAVINGS ──
+function renderSavings(){
+  const months=parseInt(document.getElementById('savSlider').value);
+  document.getElementById('sav-cards').innerHTML=JARS.filter(j=>!j.monthly).map(jar=>{
+    const monthly=getAlloc(jar);
+    return `<div class="proj-card" style="background:${jar.bg}">
+      <div class="proj-title">${jar.emoji} ${jar.label}</div>
+      <div class="proj-sub">${fmt(monthly)}/month × ${months} months</div>
+      <div class="proj-amount" style="color:${jar.color}">${fmt(monthly*months)}</div>
+    </div>`;
+  }).join('');
+  const savAlloc=getAlloc(JARS.find(j=>j.id==='savings'));
+  const freAlloc=getAlloc(JARS.find(j=>j.id==='freedom'));
+  document.getElementById('milestones').innerHTML=[3,6,12,24,36,60].map(m=>`
+    <div class="mil-row" style="${m===months?'background:rgba(59,130,246,0.08)':''}">
+      <span class="mil-period">${m} months</span>
+      <div>
+        <p style="font-size:12px;font-family:'DM Mono',monospace;color:#8B5CF6;text-align:right;margin-bottom:2px">🎯 ${fmt(savAlloc*m)}</p>
+        <p style="font-size:12px;font-family:'DM Mono',monospace;color:#10B981;text-align:right">💰 ${fmt(freAlloc*m)}</p>
+      </div>
+    </div>`).join('');
+}
+
+function renderAll(){renderOverview();renderTrack();renderSavings();}
+
+// ── PWA SERVICE WORKER (inline via data URL) ──
+if('serviceWorker' in navigator && location.protocol === 'https:'){
+  window.addEventListener('load', async ()=>{
+    try {
+      // Write SW as a data URL — works on GitHub Pages
+      const swCode = encodeURIComponent(`
+        self.addEventListener('install', e => self.skipWaiting());
+        self.addEventListener('activate', e => e.waitUntil(clients.claim()));
+        self.addEventListener('fetch', e => {
+          e.respondWith(fetch(e.request).catch(() => new Response('offline')));
+        });
+      `);
+      const reg = await navigator.serviceWorker.register(
+        'data:text/javascript,' + swCode
+      );
+      console.log('SW ready');
+    } catch(e) {
+      console.log('SW not needed locally:', e.message);
+    }
+  });
+}
+
+// ── INSTALL PROMPT ──
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const btn = document.getElementById('install-btn');
+  if(btn) btn.style.display = 'flex';
+  console.log('Install prompt ready!');
+});
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  const btn = document.getElementById('install-btn');
+  if(btn) btn.style.display = 'none';
+  console.log('App installed!');
+});
+function installApp(){
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choice => {
+      console.log('User choice:', choice.outcome);
+      deferredPrompt = null;
+    });
+  } else {
+    alert('To install: tap Chrome menu (⋮) → Add to Home Screen or Install App');
+  }
+}
+
+// ── INIT ──
+load();
+document.getElementById('mlbl-m').textContent=MONTHS[cm];
+document.getElementById('mlbl-y').textContent=cy;
+document.getElementById('salaryInput').value=salary;
+renderAll();
+</script>
+
+<!-- INSTALL BUTTON -->
+<div id="install-btn" onclick="installApp()" style="display:none;position:fixed;bottom:20px;left:16px;align-items:center;gap:6px;background:rgba(255,209,102,0.15);border:1px solid rgba(255,209,102,0.35);border-radius:20px;padding:8px 14px;cursor:pointer;z-index:998">
+  <span style="font-size:14px">📲</span>
+  <span style="font-size:12px;font-weight:700;color:#FFD166;font-family:'DM Sans',sans-serif">Install App</span>
+</div>
+</body>
+</html>
